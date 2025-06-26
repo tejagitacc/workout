@@ -473,3 +473,18 @@
   </div>
 </body>
 </html>
+
+
+<script>
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+  checkboxes.forEach(cb => {
+    const saved = localStorage.getItem(cb.name);
+    cb.checked = saved === 'true';
+
+    cb.addEventListener('change', () => {
+      localStorage.setItem(cb.name, cb.checked);
+    });
+  });
+</script>
+
