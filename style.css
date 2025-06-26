@@ -66,20 +66,46 @@ h1 {
   white-space: pre-line;
 }
 
-/* make header a positioning context */
+/* Updated header to use flexbox for vertical stacking and right alignment */
 .header {
-  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-end; /* Align items to the right */
   margin-bottom: 20px;
-  /* height to accommodate the button & title */
-  padding: 10px 0;
+  padding-right: 20px; /* Add some padding on the right for spacing from edge */
+  position: relative; /* Keep relative for h1 absolute positioning */
 }
 
-/* Reset button at right */
-#reset {
+/* Center the title in the header, now with absolute positioning */
+.header h1 {
   position: absolute;
-  right: 0; /* Changed from left: 0 to right: 0 */
-  top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px; /* Adjust top as needed */
+  margin: 0;
+  font-size: 28px;
+  width: 100%; /* Ensure it takes full width for centering */
+  text-align: center; /* Explicitly center text */
+  padding: 0 40px; /* Add padding to prevent overlap with buttons on smaller screens */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Count box positioning */
+#checkedDaysCount {
+  /* No absolute positioning needed here, flexbox handles placement */
+  margin-top: 60px; /* Space from the top (considering h1 height) */
+  margin-bottom: 10px; /* Space between count and reset button */
+  background: #6a0dad; /* A darker purple for the count box */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 1; /* Ensure it's above other elements if there are overlaps */
+}
+
+/* Reset button positioning */
+#reset {
+  /* No absolute positioning needed here, flexbox handles placement */
   background: #9b59b6;
   color: #fff;
   border: none;
@@ -87,14 +113,29 @@ h1 {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s ease;
+  margin-bottom: 10px; /* space below button, if needed */
+  z-index: 1; /* Ensure it's above other elements if there are overlaps */
 }
+
 #reset:hover {
   background: #8e44ad;
 }
 
-/* Center the title in the header */
-.header h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 28px;
+/* Media query adjustments for smaller screens */
+@media (max-width: 600px) {
+  .header {
+    align-items: center; /* Center align items for small screens */
+    padding-right: 0;
+  }
+
+  .header h1 {
+    position: static; /* Remove absolute positioning */
+    transform: none;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  #checkedDaysCount {
+    margin-top: 0; /* Reset margin-top for static positioning */
+  }
 }
