@@ -476,15 +476,19 @@
 
 
 <script>
+  // Select all checkboxes on the page
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
+  // On page load: set the checked state from localStorage
   checkboxes.forEach(cb => {
     const saved = localStorage.getItem(cb.name);
     cb.checked = saved === 'true';
 
+    // Save state on change
     cb.addEventListener('change', () => {
       localStorage.setItem(cb.name, cb.checked);
     });
   });
 </script>
+
 
