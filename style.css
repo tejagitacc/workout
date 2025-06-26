@@ -1,120 +1,69 @@
-/* body {
+/* === Page Base Styles === */
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  background-color: #e0f7fa;   /* light-blue page background */
   color: #333;
   margin: 0;
   padding: 20px;
-} */
-body {
-  background-color: #e0f7fa !important;
 }
+
+/* === Headings === */
 h1 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 20px;
 }
+
+/* === Calendar Grid === */
 .calendar {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
 }
-.day {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-}
-.day:hover {
-  transform: scale(1.02);
-}
-.day-title {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-.exercises {
-  font-size: 14px;
-  line-height: 1.6;
-  white-space: pre-line;
-}
 
-/* ✅ Green checkboxes */
-input[type="checkbox"] {
-  accent-color: green;
-}
-
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fefefe;
-  color: #333;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.calendar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
-
-.day {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-}
-
-.day:hover {
-  transform: scale(1.02);
-}
-
-.day-title {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-.exercises {
-  font-size: 14px;
-  line-height: 1.6;
-  white-space: pre-line;
-}
-
-/* Checkbox accent color */
-input[type="checkbox"] {
-  accent-color: purple;
-}
-
-
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-
-/* Responsive tweaks for very small devices */
+/* 2 columns on tablets/phones */
 @media (max-width: 768px) {
   .calendar {
-    grid-template-columns: repeat(2, 1fr); /* phones/tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* 1 column on very small devices */
 @media (max-width: 480px) {
   .calendar {
-    grid-template-columns: 1fr; /* optional for very small screens */
+    grid-template-columns: 1fr;
   }
+}
+
+/* === Day Card === */
+.day {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.day:hover {
+  transform: scale(1.02);
+}
+
+/* === Day Title === */
+.day-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* === Exercises List === */
+.exercises {
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* === Checkbox Styling === */
+input[type="checkbox"] {
+  accent-color: purple;
 }
