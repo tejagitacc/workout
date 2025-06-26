@@ -74,10 +74,10 @@ h1 {
   padding: 10px 0;
 }
 
-/* Reset button at left */
+/* Reset button at right */
 #reset {
   position: absolute;
-  left: 0;
+  right: 0; /* Changed from left: 0 to right: 0 */
   top: 50%;
   transform: translateY(-50%);
   background: #9b59b6;
@@ -98,4 +98,3 @@ h1 {
   text-align: center;
   font-size: 28px;
 }
-
