@@ -66,15 +66,20 @@ h1 {
   white-space: pre-line;
 }
 
-/* Header: title on left, reset button on right */
+/* make header a positioning context */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;  /* space below header */
+  position: relative;
+  margin-bottom: 20px;
+  /* height to accommodate the button & title */
+  padding: 10px 0;
 }
-/* Optional: make the reset button stand out */
+
+/* Reset button at left */
 #reset {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   background: #9b59b6;
   color: #fff;
   border: none;
@@ -87,7 +92,10 @@ h1 {
   background: #8e44ad;
 }
 
-/* === Checkbox Styling === */
-input[type="checkbox"] {
-  accent-color: purple;
+/* Center the title in the header */
+.header h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 28px;
 }
+
