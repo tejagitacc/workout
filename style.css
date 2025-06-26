@@ -1,10 +1,10 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('background.jpg'); /* or your filename */
+  background-image: url('background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
+  background-attachment: fixed;
   color: #333;
   margin: 0;
   padding: 20px;
