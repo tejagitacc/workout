@@ -42,10 +42,13 @@ h1 {
   border-radius: 12px;
   padding: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .day:hover {
   transform: scale(1.02);
+  /* light purple glow */
+  box-shadow: 0 0 15px rgba(186, 85, 211, 0.6);
 }
 
 /* === Day Title === */
