@@ -66,6 +66,27 @@ h1 {
   white-space: pre-line;
 }
 
+/* Header: title on left, reset button on right */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;  /* space below header */
+}
+/* Optional: make the reset button stand out */
+#reset {
+  background: #9b59b6;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+#reset:hover {
+  background: #8e44ad;
+}
+
 /* === Checkbox Styling === */
 input[type="checkbox"] {
   accent-color: purple;
