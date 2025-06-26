@@ -471,24 +471,25 @@
       </div>
     </div>
   </div>
+
+      <button id="reset">Reset All Days</button>
+  <script>
+    const boxes = document.querySelectorAll('input[type="checkbox"]');
+    const reset = document.getElementById('reset');
+
+    // On load: restore saved checkbox states
+    boxes.forEach(cb => {
+      cb.checked = localStorage.getItem(cb.name) === 'true';
+      cb.addEventListener('change', () => {
+        localStorage.setItem(cb.name, cb.checked);
+      });
+    });
+
+    // On click: clear storage and uncheck all
+    reset.addEventListener('click', () => {
+      localStorage.clear();
+      boxes.forEach(cb => cb.checked = false);
+    });
+  </script>
 </body>
 </html>
-
-
-<script>
-  // Select all checkboxes on the page
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-  // On page load: set the checked state from localStorage
-  checkboxes.forEach(cb => {
-    const saved = localStorage.getItem(cb.name);
-    cb.checked = saved === 'true';
-
-    // Save state on change
-    cb.addEventListener('change', () => {
-      localStorage.setItem(cb.name, cb.checked);
-    });
-  });
-</script>
-
-
