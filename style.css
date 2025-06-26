@@ -90,22 +90,23 @@ h1 {
   box-sizing: border-box; /* Include padding in width */
 }
 
-/* Count box positioning */
+/* Count box positioning - now styled to look like a button */
 #checkedDaysCount {
-  /* No absolute positioning needed here, flexbox handles placement */
-  margin-top: 60px; /* Space from the top (considering h1 height) */
-  margin-bottom: 10px; /* Space between count and reset button */
   background: #6a0dad; /* A darker purple for the count box */
   color: #fff;
-  padding: 5px 10px;
+  padding: 8px 12px; /* Make padding consistent with button */
   border-radius: 6px;
   font-size: 14px;
   z-index: 1; /* Ensure it's above other elements if there are overlaps */
+  margin-top: 60px; /* Space from the top (considering h1 height) */
+  margin-bottom: 10px; /* Space between count and reset button */
+  border: 1px solid #5a0a99; /* Add a subtle border for button look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  cursor: default; /* Indicate it's not clickable like a button */
 }
 
 /* Reset button positioning */
 #reset {
-  /* No absolute positioning needed here, flexbox handles placement */
   background: #9b59b6;
   color: #fff;
   border: none;
@@ -124,18 +125,19 @@ h1 {
 /* Media query adjustments for smaller screens */
 @media (max-width: 600px) {
   .header {
-    align-items: center; /* Center align items for small screens */
-    padding-right: 0;
+    align-items: flex-end; /* Align items to the right on small screens */
+    padding-right: 20px; /* Keep padding to avoid elements touching the edge */
   }
 
   .header h1 {
-    position: static; /* Remove absolute positioning */
+    position: static; /* Remove absolute positioning on small screens */
     transform: none;
     margin-bottom: 20px;
     padding: 0;
+    text-align: center; /* Keep h1 text centered */
   }
 
   #checkedDaysCount {
-    margin-top: 0; /* Reset margin-top for static positioning */
+    margin-top: 0; /* Reset margin-top for static positioning in flex column */
   }
 }
