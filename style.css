@@ -96,20 +96,8 @@ input[type="checkbox"] {
 }
 
 /* Responsive tweaks for very small devices */
-@media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .exercises {
-    font-size: 13px;
-  }
-
-  .day {
-    padding: 10px;
+@media (max-width: 768px) {
+  .calendar {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
